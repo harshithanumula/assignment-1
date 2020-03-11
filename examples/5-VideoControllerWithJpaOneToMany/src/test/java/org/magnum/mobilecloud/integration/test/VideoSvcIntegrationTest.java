@@ -15,7 +15,7 @@ import org.magnum.mobilecloud.video.client.VideoSvcApi;
 import org.magnum.mobilecloud.video.controller.VideoSvc;
 import org.magnum.mobilecloud.video.repository.Video;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationContextLoader;
+import org.springframework.boot.test.context.SpringBootContextLoader;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -52,7 +52,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class })
 // This is where you tell Spring the Application or Configuration object to use
-@ContextConfiguration(classes = Application.class, loader = SpringApplicationContextLoader.class)
+@ContextConfiguration(classes = Application.class, loader = SpringBootContextLoader.class)
 public class VideoSvcIntegrationTest {
 
 	// Ask Spring to automatically construct and inject your VideoSvc

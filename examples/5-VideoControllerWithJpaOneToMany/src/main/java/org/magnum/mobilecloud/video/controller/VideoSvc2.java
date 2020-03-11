@@ -81,7 +81,7 @@ public class VideoSvc2 {
 		// work to check and ensure that the specified Category actually exists
 		// before we save a Video. If we use @OneToMany, JPA automatically ensures
 		// that a Category referenced by a Video exists.
-		if(categories.findOne(v.getCategory()) == null){
+		if(categories.findById(v.getCategory()) == null){
 			throw new RuntimeException("Unknown category:"+v.getCategory());
 		}
 		

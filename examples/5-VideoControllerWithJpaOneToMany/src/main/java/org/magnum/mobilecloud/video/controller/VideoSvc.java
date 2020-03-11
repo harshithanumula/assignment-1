@@ -123,7 +123,7 @@ public class VideoSvc implements VideoSvcApi {
 	// list of videos that are part of the specified category.
 	@RequestMapping(value=VideoSvcApi.VIDEO_SVC_PATH+"/{category}", method=RequestMethod.GET)
 	public @ResponseBody Collection<Video> getVideoListForCategory(@PathVariable("category") String categoryName){
-		Category c = categories.findOne(categoryName);
+		Category c = categories.findById(categoryName).orElse(null);
 		return (c != null) ? Lists.newArrayList(c.getVideos()) : new ArrayList<Video>();
 	}
 	
